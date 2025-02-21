@@ -1,4 +1,4 @@
-import { Component,computed, signal } from '@angular/core';
+import { Component,computed, input, output } from '@angular/core';
 
 import { DUMMY_USERS } from '../../dummy-users';
 
@@ -10,12 +10,13 @@ import { DUMMY_USERS } from '../../dummy-users';
   styleUrl: './user.component.css'
 })
 export class UserComponent {
-  selectedUser=signal( DUMMY_USERS[0]);
-
-  imagePath = computed(() => 'assets/users/' + this.selectedUser().avatar); 
+  user = input.required<{ id: string; name: string; avatar: string; } >();
+  selectedUserId=output<string>();
+ 
+  imagePath = computed(() => 'assets/users/' + this.user()?.avatar); 
  
 
-  onSelectUser() {
-    // this.selectedUser = user;
+  onUserClick() {
+    this.selectedUserId.emit(this.user().id);
   }
 }

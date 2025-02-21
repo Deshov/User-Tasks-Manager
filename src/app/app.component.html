@@ -1,8 +1,12 @@
 <app-header/>
 <main>
   <ul id="users">
-    <li>
-      <app-user/>
-    </li>
-  </ul>
+    @for (user of users();track user.id){
+
+      <li>
+        <app-user (click)="onSelectUser(user.id)" [user]="user"/>
+      </li>
+    }
+    
+  </ul> 
 </main>
