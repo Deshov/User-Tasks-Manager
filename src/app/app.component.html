@@ -2,11 +2,10 @@
 <main>
   <ul id="users">
     @for (user of users();track user.id){
-
       <li>
         <app-user (click)="onSelectUser(user.id)" [user]="user"/>
       </li>
     }
-    
-  </ul> 
+  </ul>
+  <app-tasks [userid]="selectedUserId"/> 
 </main>
