@@ -8,6 +8,6 @@ import { Component, input } from '@angular/core';
   styleUrl: './tasks.component.css'
 })
 export class TasksComponent {
- userid = input.required<string|null >();
+ userid = input<string >();
  
 }
