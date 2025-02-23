@@ -16,15 +16,16 @@ export class AppComponent {
   users = DUMMY_USERS
   selectedUserId: string | null = null;
 
-  getUserData = computed(()=>
-     this.users.find(user=>user.id === this.selectedUserId)
-  );
-
-  get userData(){
-    return  this.users.find(user=>user.id === this.selectedUserId);
-  }
+  // getUserData = computed(()=>
+  //    this.users.find(user=>user.id === this.selectedUserId)
+  // );
 
   onSelectUser(id:string){
     this.selectedUserId = id;
   }
+  
+  get userData(){
+    return  this.users.find(user=>user.id === this.selectedUserId);
+  }
+
 }
