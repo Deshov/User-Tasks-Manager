@@ -1,8 +1,9 @@
-import { Component, input } from '@angular/core';
+import { Component, inject, input } from '@angular/core';
 import { TaskComponent } from "./task/task.component";
-import { DUMMY_TASKS } from "./dummy-tasks";
 import { NewTaskComponent } from "./new-task/new-task.component";
 import { Task } from "./task/task.model";
+import { TaskService } from './task.service';
+
 @Component({
   selector: 'app-tasks',
   standalone: true,
@@ -11,16 +12,19 @@ import { Task } from "./task/task.model";
   styleUrl: './tasks.component.css'
 })
 export class TasksComponent {
- name = input<string >();
- userid = input<string >();
+ name = input.required<string >();
+ userid = input.required<string >();
  showNewTask = false
- tasks = DUMMY_TASKS;
+ 
+ private taskService = inject(TaskService);
+ 
 
  get userTasks() {
-   return this.tasks.filter(task => task.userId === this.userid());
+  return this.taskService.getUserTasks(this.userid());
  }
- completeTask(taskId?: string) {
-    this.tasks = this.tasks.filter((task) => task.id !== taskId)
+
+ completeTask(taskId: string) {
+    this.taskService.completeTask(taskId);
  }
 
  showNewTaskDialog() {
@@ -32,7 +36,7 @@ export class TasksComponent {
  }
 
  addTask(task: Task) {
-   this.tasks.unshift(task);
+   this.taskService.addTask(task);
    this.showNewTask = false;
  }
 }
