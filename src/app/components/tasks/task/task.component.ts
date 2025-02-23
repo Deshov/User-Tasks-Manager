@@ -12,7 +12,6 @@ import { TaskService } from '../task.service';
 })
 
 export class TaskComponent {
-  completedTask = output<string>();
   private taskService = inject(TaskService);
 
   task = input.required<Task>();

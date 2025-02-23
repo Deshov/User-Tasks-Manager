@@ -23,10 +23,6 @@ export class TasksComponent {
   return this.taskService.getUserTasks(this.userid());
  }
 
- completeTask(taskId: string) {
-    this.taskService.completeTask(taskId);
- }
-
  showNewTaskDialog() {
    this.showNewTask = true;
  }
