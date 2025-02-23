@@ -32,7 +32,7 @@ export class TasksComponent {
  }
 
  addTask(task: Task) {
-   this.tasks = [...this.tasks, task];
+   this.tasks.unshift(task);
    this.showNewTask = false;
  }
 }
