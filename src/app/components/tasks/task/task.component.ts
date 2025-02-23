@@ -12,7 +12,7 @@ export class TaskComponent {
   
   task = input<Task>();
 
-  onCompleteTask(id?: string) {
-    this.completedTask.emit(id);
+  onCompleteTask() {
+    this.completedTask.emit(this.task()?.id);
   }
 }
