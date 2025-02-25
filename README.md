@@ -1,4 +1,5 @@
-## EasyTrack
+
+# EasyTrack
 
 EasyTrack is a task management application built with Angular. It allows users to manage their tasks with ease, providing a user-friendly interface and essential features for task management.
 
@@ -37,6 +38,46 @@ The `AppComponent` is the root component that includes the `HeaderComponent` and
 -**Template**: [app.component.html](src/app/app.component.html)
 
 -**Styles**: [app.component.css](src/app/app.component.css)
+
+### TasksComponent
+
+The `TasksComponent` is responsible for displaying the tasks of a selected user.
+
+-**Selector**: `app-tasks`
+
+-**Template**: [tasks.component.html](src/app/components/tasks/tasks.component.html)
+
+-**Styles**: [tasks.component.css](src/app/components/tasks/tasks.component.css)
+
+### NewTaskComponent
+
+The `NewTaskComponent` is responsible for creating a new task.
+
+-**Selector**: `app-new-task`
+
+-**Template**: [new-task.component.html](src/app/components/tasks/new-task/new-task.component.html)
+
+-**Styles**: [new-task.component.css](src/app/components/tasks/new-task/new-task.component.css)
+
+### TaskComponent
+
+The `TaskComponent` is responsible for displaying an individual task.
+
+-**Selector**: `app-task`
+
+-**Template**: [task.component.html](src/app/components/tasks/task/task.component.html)
+
+-**Styles**: [task.component.css](src/app/components/tasks/task/task.component.css)
+
+### CardComponent
+
+The `CardComponent` is a shared component used to display content within a card layout.
+
+-**Selector**: `app-card`
+
+-**Template**: [card.component.html](src/app/shared/card/card.component.html)
+
+-**Styles**: [card.component.css](src/app/shared/card/card.component.css)
 
 ## Dummy Users
 
